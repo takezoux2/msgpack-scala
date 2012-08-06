@@ -5,7 +5,7 @@ import xml.XML
 
 object MessagePackScalaBuild extends Build {
   
-  val messagePackVersion = "0.6.4-SNAPSHOT"
+  val messagePackVersion = "0.6.4"
 
 
   override lazy val settings = super.settings ++
@@ -20,7 +20,8 @@ object MessagePackScalaBuild extends Build {
       )
   
   lazy val dependencies = Seq(
-    "org.msgpack" % "msgpack" % messagePackVersion
+    "org.msgpack" % "msgpack" % messagePackVersion,
+    "org.slf4j" % "slf4j-api" % "1.6.6" % "provided"
   )
   
   lazy val dependenciesForTest = Seq(
