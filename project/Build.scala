@@ -5,7 +5,7 @@ import xml.XML
 
 object MessagePackScalaBuild extends Build {
   
-  val messagePackVersion = "0.6.8-SNAPSHOT"
+  val messagePackVersion = "0.6.10"
 
 
   override lazy val settings = super.settings ++
@@ -13,8 +13,8 @@ object MessagePackScalaBuild extends Build {
         organization := "org.msgpack",
         name := "msgpack-scala",
         version := messagePackVersion,
-        scalaVersion := "2.9.2",
-        crossScalaVersions := Seq("2.9.0-1","2.9.1","2.9.1-1","2.9.2"),
+	crossScalaVersions := Seq("2.9.0-1","2.9.1","2.9.1-1","2.9.2","2.10.4"),
+        scalaVersion := "2.10.4",
         resolvers ++= Seq(Resolver.mavenLocal),
         parallelExecution in Test := false
       )
@@ -36,6 +36,7 @@ object MessagePackScalaBuild extends Build {
       case "2.9.1"  => "org.specs2" %% "specs2" % "1.12.3" % "test"
       case "2.9.0-1"  => "org.specs2" %% "specs2" % "1.8.2" % "test"
       case "2.9.0"  => "org.specs2" %% "specs2" % "1.7.1" % "test"
+      case "2.10.4" => "org.specs2" %% "specs2" % "2.3.11" % "test"
       case _ => "org.specs2" %% "specs2" % "1.8.2" % "test"
     }
     Seq(
